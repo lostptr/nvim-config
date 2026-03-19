@@ -11,6 +11,7 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find f
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = 'Telescope find references (LSP)' })
 
 -- Neotree
 vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { silent = true })
@@ -30,4 +31,11 @@ vim.keymap.set('n', '<leader><space>', vim.lsp.buf.hover, {})
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
 vim.keymap.set('n', '<A-S-f>', vim.lsp.buf.format, {})
+vim.keymap.set('n', '<A-S-f>', vim.lsp.buf.format, {})
+--vim.keymap.set('n', 'gr', vim.lsp.buf.references, {})
+
+-- Buffers
+vim.keymap.set('n', '<Tab>', ':bnext<CR>', defaults)
+vim.keymap.set('n', '<S-Tab>', ':bprev<CR>', defaults)
+vim.keymap.set('n', '<leader>x', ':bdelete<CR>', defaults)
 
