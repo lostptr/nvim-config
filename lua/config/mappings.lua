@@ -32,6 +32,9 @@ vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
 vim.keymap.set('n', '<A-S-f>', vim.lsp.buf.format, {})
 vim.keymap.set('n', '<A-S-f>', vim.lsp.buf.format, {})
+vim.keymap.set('n', 'gl', vim.diagnostic.open_float, {})
+vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, {})
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {})
 --vim.keymap.set('n', 'gr', vim.lsp.buf.references, {})
 
 -- Buffers
