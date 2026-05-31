@@ -3,6 +3,8 @@
 local os_name = vim.loop.os_uname().sysname
 local windows_build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install'
 
+local actions = require("telescope.actions")
+
 return {
   {
     'nvim-telescope/telescope.nvim',
@@ -17,7 +19,12 @@ return {
     config = function()
       require("telescope").setup {
         defaults = {
-          path_display = { "smart" }
+          path_display = { "smart" },
+          mappings = {
+            n = {
+              ["d"] = actions.delete_buffer,     -- Delete buffer in normal mode
+            },
+          }
         },
         extensions = {
           ["ui-select"] = {
